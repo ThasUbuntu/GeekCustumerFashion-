@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+<!--icon-->
+    <link rel="shortcut icon" type="imagex/png" href="/img/logo.ico">
+
+<!--font-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+
+<!--Google Platform Library-->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="815818709625-hnucsnufd3retalfjq3ac5g5ebduhsut.apps.googleusercontent.com">
+
+    <title>Geek Custumer Fashion | Moda Geek </title>
+    
+   </head>
+<body> 
+  <!--header selection starts-->
+  <header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+  
+  <a href="#" class="logo">Geek Custumer Fashion</a>
+  
+  <nav class="navbar">
+    <a href="#home">home</a>
+    <a href="#Camisetas">Camisetas</a>
+    <a href="#Moletons">Moletons</a>
+    <a href="#acessorios">Acessórios</a>
+    <a href="#outlet">Outlet</a>
+  </nav>
+
+  <div class="icons">
+    <a href="#" class="fas fa-heart"></a>
+    <a href="compra.html"  class="fas fa-shopping-cart"></a>
+    <a href="login.html" class="fas fa-user"></a>
+    
+  </div>
+
+  </header><!--header selection ends-->  
+ 
+  
+
+<!--layuolt-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+          <h5 class="card-title text-center mb-5 fw-light fs-1">Login</h5>
+          <form>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email </label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Senha</label>
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+              <label class="form-check-label" for="rememberPasswordCheck">
+                Mantenha-me conectado
+              </label>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Entrar</button>
+            </div>
+            <hr class="my-4">
+            <div class="d-grid mb-1">
+              <div class="g-signin2" data-width="430" data-height="50" data-longtitle="true"> 
+            </div>
+            
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!--Obtenha informações de perfil-->
+    <script>
+
+     function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          var userID = profile.getId();
+          var userName = profile.getName();
+          var userPicture = profile.getImageUrl();
+          var userEmail = profile.getEmail();
+          var userToken = googleUser.getAuthResponse() .id_token;
+
+         if(userName !== ' '){
+           var dados = {
+
+            userID:userID,
+            userName:userName,
+            userPicture:userPicture,
+            userEmail:userEmail
+           }
+           
+          }else{
+          document.getElementById('msg') .innerHTML = userEmail;
+          }
+        }
+    </script>
+
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</main>  
+    <!--JavaScript-->
+  <script src="js/script.js"></script>
+      
+</body>
+</html>

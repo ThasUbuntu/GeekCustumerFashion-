@@ -1,0 +1,49 @@
+body {
+    
+    background: #fff;
+    
+  }
+
+  .container{
+      margin-top: 15rem;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+    background-color: #fdca22;
+  }
+  
+  .btn-google {
+    color: white !important;
+    background-color: #fdca22;
+  }
+  
+  .btn-primary btn-login text-uppercase fw-bold{
+    color: white !important;
+    background-color: #fdca22;
+  }
+  
+/*arrumar fazer botao google responsivo*/
+@media(max-width:991px){
+    .g-signin2{
+        width:400px; 
+        height:45px; 
+          
+    } 
+}
+@media(max-width:768px){
+    .g-signin2{
+        width:380px; 
+        height:40px; 
+          
+    } 
+}
+@media(max-width:400px){
+    .g-signin2{
+        width:360px; 
+        height:35px; 
+          
+    } 
+}
