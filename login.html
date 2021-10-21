@@ -4,121 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--css-->
-    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="google-signin-client_id" content="815818709625-hnucsnufd3retalfjq3ac5g5ebduhsut.apps.googleusercontent.com">
+
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+
 <!--icon-->
-    <link rel="shortcut icon" type="imagex/png" href="/img/logo.ico">
+<link rel="shortcut icon" type="imagex/png" href="/img/logo.ico">
 
 <!--font-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
 
-<!--Google Platform Library-->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="815818709625-hnucsnufd3retalfjq3ac5g5ebduhsut.apps.googleusercontent.com">
+    <title>Geek Custumer Fashion | Login</title>
 
-    <title>Geek Custumer Fashion | Moda Geek </title>
-    
-   </head>
-<body> 
-  <!--header selection starts-->
-  <header>
+</head>
+<body>
+<!--header selection starts-->
+<header>
 
     <div id="menu-bar" class="fas fa-bars"></div>
   
-  <a href="#" class="logo">Geek Custumer Fashion</a>
+  <h2 class="logo"> Geek Custumer Fashion</h2>
   
   <nav class="navbar">
-    <a href="#home">home</a>
-    <a href="#Camisetas">Camisetas</a>
-    <a href="#Moletons">Moletons</a>
+    <a href="index.html">home</a>
+    <a href="camisetas.html">Camisetas</a>
+    <a href="moletom.html">Moletons</a>
     <a href="#acessorios">Acessórios</a>
-    <a href="#outlet">Outlet</a>
-  </nav>
+      </nav>
 
   <div class="icons">
     <a href="#" class="fas fa-heart"></a>
     <a href="compra.html"  class="fas fa-shopping-cart"></a>
-    <a href="login.html" class="fas fa-user"></a>
+    <a href="login.html" class="fas fa-user" id="login-btn"></a>
     
   </div>
 
-  </header><!--header selection ends-->  
+  </header>
+<!--header selection ends-->  
+
+<!--login starts-->
+
+<div class="login-from-container">
+          
+    <form action="">
+      <h3>Login</h3>
+      <input type="email" class="box" placeholder="email" id="">
+      
+      <input type="password" class="box" placeholder="senha" id="">
+      <div class="checkbox">
+        <input type="checkbox" placeholder="name" id="remember-me">
+        <label for="remember-me">Mantenha-me conectado</label>
+      </div>
+      <p> <a href="#">Esqueci minha senha</a></p>
+      <input type="submit" value="Entre" class="btn">
+     
+      <!--login google-->
+     <div class="g-signin2" data-onsuccess="onSignIn" data-width="360" data-height="45" data-longtitle="true" ></div>
+
+    </form>
+  </div>
  
   
+<script src="js/script.js"></script>
+<script src="js/script.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<!--layuolt-->
-<div class="container">
-  <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-      <div class="card border-0 shadow rounded-3 my-5">
-        <div class="card-body p-4 p-sm-5">
-          <h5 class="card-title text-center mb-5 fw-light fs-1">Login</h5>
-          <form>
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email </label>
-            </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Senha</label>
-            </div>
-
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-              <label class="form-check-label" for="rememberPasswordCheck">
-                Mantenha-me conectado
-              </label>
-            </div>
-            <div class="d-grid">
-              <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Entrar</button>
-            </div>
-            <hr class="my-4">
-            <div class="d-grid mb-1">
-              <div class="g-signin2" data-width="430" data-height="50" data-longtitle="true"> 
-            </div>
-            
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-  <!--Obtenha informações de perfil-->
-    <script>
-
-     function onSignIn(googleUser) {
-          var profile = googleUser.getBasicProfile();
-          var userID = profile.getId();
-          var userName = profile.getName();
-          var userPicture = profile.getImageUrl();
-          var userEmail = profile.getEmail();
-          var userToken = googleUser.getAuthResponse() .id_token;
-
-         if(userName !== ' '){
-           var dados = {
-
-            userID:userID,
-            userName:userName,
-            userPicture:userPicture,
-            userEmail:userEmail
-           }
-           
-          }else{
-          document.getElementById('msg') .innerHTML = userEmail;
-          }
-        }
-    </script>
-
-<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-</main>  
-    <!--JavaScript-->
-  <script src="js/script.js"></script>
-      
 </body>
 </html>
