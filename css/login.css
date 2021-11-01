@@ -13,6 +13,7 @@
     transition: all  2.s linear;
     
 }
+ 
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -44,7 +45,7 @@ section{
     font-size: 1.5rem;
     color: var(--black);
     cursor: pointer;
-    background-color:#080808;
+    background-color:var(--yellow);
     padding: 1rem 3rem ;
 }
 
@@ -56,7 +57,7 @@ header{
     position: fixed;
     top:0; left: 0; right: 0;
     z-index: 1000;
-    background:#52556e ;
+    background:#fff ;
     padding: 1rem 9%;
     display: flex;
     align-items: center;
@@ -64,18 +65,16 @@ header{
     box-shadow: 0  .5rem  1rem rgba(0,0,0, 0.1);
 }
 header .logo{
-    justify-items: flex-start;
     font-size: 2.5rem;
-    color: #fff;
-    text-decoration: none;
+    color:var(--black);
     
-
+    text-decoration: none;
     
 }
 header .navbar a {
     font-size: 1.7rem;
     font-weight: 300;
-    color: #fff;
+    color:var(--black);
     margin:0 1rem ;
     text-decoration: none;
 }
@@ -92,12 +91,11 @@ header .icons a {
 header .icons a:hover{
     color: var(--yellow);
 }
-
 .login-from-container{
     display: flex ;
     align-items: center;
     justify-content: center;
-    background: #080808;
+    background: #fff;
     border: #0a0a0a;
     
     position: fixed;
@@ -110,10 +108,10 @@ header .icons a:hover{
 }
 
 .login-from-container form{
-    background: #fff;
+    background: rgb(212, 209, 209);
     border: #080808;
-    width: 40rem;
-    padding: 2rem;
+    width: 50rem;
+    padding: 5rem;
     box-shadow: #ccc ;
     border-radius: .5rem;
     margin: 2rem;
@@ -138,6 +136,7 @@ header .icons a:hover{
     padding: 1rem 1.2rem;
     color: #080808;
     text-transform: none;
+    background-color: #fff;
 }
 .login-from-container form .checkbox{
     display: flex;
@@ -171,9 +170,9 @@ header .icons a:hover{
     text-decoration: underline;
 
 }
-.login-from-container form .g-signin2{
-    justify-items: center;
-    align-items: center;
+.login-from-container  form .g-signin2{
+    width: 400px;
+    
 }
 
 
