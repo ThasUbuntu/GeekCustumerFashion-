@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--css-->
+<!--css-->
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
 <!--icon-->
     <link rel="shortcut icon" type="imagex/png" href="/img/logo.ico">
 
@@ -15,89 +15,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
 
     <title>Geek Customer Fashion | Moda Geek </title>
-    
 </head>
 <body>
-    <!--header selection starts-->
-  <header>
-
-    <div id="menu-bar" class="fas fa-bars"></div>
-  
-  <a href="#" class="logo">Geek Customer Fashion</a>
-  
-  <nav class="navbar">
-    <a href="index.html">home</a>
-    <a href="camisetas.html">Camisetas</a>
-    <a href="moletom.html">Moletons</a>
-    <a href="#acessorios">Acessórios</a>
-    
-  </nav>
-  
-  <div class="icons">
-    <a href="#" class="fas fa-heart"></a>
-    <a href="compra.html"  class="fas fa-shopping-cart"></a>
-    <a href="login.html" class="fas fa-user"></a>
-    
-  </div>
-
-</header>
-
-    
-<section class="t-shirt" id="t-shirt">
-
- 
-    <h1 class="t-shirt"><span>Camisetas</span></h1>
-  
-      <div class="row">
-        <div class="image-container">
-          <div class="small-image">
-            <img src="/img/Camisetas/camisa conectores branca-01.png" class="t-shirt-image-1" alt="">
-            <img src="img/Camisetas/camisa conectores branca-01.2.png" class="t-shirt-image-1" alt="">
-            
-          </div>
-          <div class="big-image">
-            <img src="img/Camisetas/camisa conectores branca-01.png" 
-            class="big-image-1" alt="">
-            
-          </div>
-        </div>
-        <div class="content">
-          <h3>camisetas Mortal Kombat</h3>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-          <p>Características:
-            100% Algodão, 
-            Estampa exclusiva Fortnite, 
-            Decote redondo, 
-            Mangas curtas e
-            Barra simples</p>
-            
-            
-            <div class="price">R$89,00<span>100,00</span></div>
-
-            <h4>Tamanho: </h4>
-           
-
-            <div class="size">
-              
-              <div class="size-t">pp</div>
-              <div class="size-t">p</div>
-              <div class="size-t">m</div>
-              <div class="size-t">g</div>
-              <div class="size-t">xg</div>
-            </div>
-
-            <a href="API.html" class="btn">COMPRAR</a>
-        </div>
-      </div>
-      
-  
-</section>  
 
 <!--espaço-->
 <style>
@@ -112,6 +31,90 @@
   
   <!--espaco ends-->
 
+<!--header selection starts-->
+  <header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+  
+  <a href="#" class="logo"> Geek Customer Fashion</a>
+  
+  <nav class="navbar">
+    <a href="#home">home</a>
+    <a href="camisetas.html">Camisetas</a>
+    <a href="moletom.html">Moletons</a>
+    <a href="#acessorios">Acessórios</a>
+      </nav>
+
+  <div class="icons">
+    <a href="#" class="fas fa-heart"></a>
+    <a href="compra.html"  class="fas fa-shopping-cart"></a>
+    <a href="login.html" class="fas fa-user" id="login-btn"></a>
+    
+  </div>
+
+  </header>
+<!--header selection ends-->  
+
+
+<div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=BRL" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'pill',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"description":"Moletom Gamer Over ","amount":{"currency_code":"BRL","value":59.9}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+
+<!--espaço-->
+<style>
+  .espaco{
+      padding: 5rem;   
+  }    
+  </style>
+  <div class="espaco">
+  
+      <div></div>
+      </div>
+  
+  <!--espaco ends-->
 
 <!--footer section starts-->
 
@@ -153,7 +156,18 @@
 
 <!--footer section ends-->
 
+
+
+
 <!--JavaScript-->
-<script src="/js/script.js"></script>
+<script src="js/script.js"></script>
+
+
+
+
 </body>
 </html>
+
+
+
+
